@@ -1,31 +1,24 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import items from "@/data/recipes.json";
 
 const LastRecipes = () => {
-  const items = [
-    {
-      src: "/images/strawberry milkshake.png",
-      title: "Strawberry Milkshake",
-    },
-    {
-      src: "/images/chocolate banana cake.png",
-      title: "Chocolate Banana Cake",
-    },
-    { src: "/images/berry biscuit 1.png", title: "Berry Biscuit" },
-    {
-      src: "/images/spinach and cheese pasta.png",
-      title: "Spinach and Cheese Pasta",
-    },
-    { src: "/images/donut 1.png", title: "Fancy Glazed Donuts" },
-    { src: "/images/cheese burger.png", title: "Cheese Burger" },
-  ];
+  const [lastRecipes, setLastRecipes] = useState(items.slice(0, 4));
+  const [showMore, setShowMore] = useState(false);
+
+  const handleLoadMore = (isShowMore: boolean) => {
+    setShowMore(isShowMore);
+    setLastRecipes(items.slice(0, isShowMore ? items.length : 4));
+  };
 
   return (
     <section className="mt-12">
       <h2 className="text-2xl font-bold mb-6">Latest Recipes</h2>
       <div className="w-full grid grid-cols-4 space-y-8 space-x-5">
-        {items.map((item) => (
-          <div key={item.title} className="flex flex-col gap-1">
+        {lastRecipes.map((item) => (
+          <div key={item.id} className="flex flex-col gap-1">
             <div className="relative h-[150px] w-full rounded-lg overflow-hidden">
               <Image
                 src={item.src}
@@ -40,8 +33,11 @@ const LastRecipes = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="border border-black text-black px-10 py-2 rounded-md hover:bg-gray-200">
-          Load More
+        <button
+          className="border border-black text-black px-10 py-2 rounded-md hover:bg-gray-200"
+          onClick={() => handleLoadMore(!showMore)}
+        >
+          {showMore ? "Show Less" : "Load More"}
         </button>
       </div>
     </section>

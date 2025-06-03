@@ -5,7 +5,6 @@ import PopularCategories from "@/components/PopularCategories";
 import EmailSendSection from "@/components/EmailSendSection";
 import CollectionSections from "@/components/CollectionSections";
 import LastRecipes from "@/components/LastRecipes";
-import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -21,7 +20,6 @@ export default function HomePage() {
         <CollectionSections />
         <LastRecipes />
       </div>
-      <Footer />
     </main>
   );
 }
