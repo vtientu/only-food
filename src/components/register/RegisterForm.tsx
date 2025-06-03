@@ -3,10 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   return (
     <div className="bg-[#FFD8CA] rounded-xl p-6 w-full h-full">
-      <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+      <h2 className="text-2xl font-semibold text-center mb-6">
+        Register Account
+      </h2>
       <form className="space-y-6">
         <div className="flex items-center border rounded-lg px-3 py-2 bg-white">
           <Mail className="w-4 h-4 text-gray-400" />
@@ -24,11 +26,19 @@ const LoginForm = () => {
             className="ml-2 w-full outline-none bg-transparent"
           />
         </div>
+        <div className="flex items-center border rounded-lg px-3 py-2 bg-white">
+          <Lock className="w-4 h-4 text-gray-400" />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="ml-2 w-full outline-none bg-transparent"
+          />
+        </div>
         <button
           type="submit"
           className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-semibold"
         >
-          Login
+          Register
         </button>
       </form>
 
@@ -47,13 +57,13 @@ const LoginForm = () => {
         </button>
       </div>
       <span className="text-center text-gray-500 block mt-4">
-        Already haven&apos;t an account?{" "}
-        <Link href="/register" className="text-orange-500">
-          Register
+        Already have an account?{" "}
+        <Link href="/login" className="text-orange-500">
+          Login
         </Link>
       </span>
     </div>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

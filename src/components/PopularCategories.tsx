@@ -19,11 +19,17 @@ export default function PopularCategories() {
   return (
     <section className="mt-12">
       <h2 className="text-2xl font-bold mb-6">Popular Categories</h2>
-      <div className="w-full grid grid-cols-6 gap-5">
+      <div className="w-full grid grid-cols-6 gap-8">
         {items.map((item) => (
           <div key={item.title} className="flex flex-col items-center gap-2">
-            <div className="relative h-[120px] w-full rounded-lg overflow-hidden">
-              <Image src={item.src} alt={item.title} fill objectFit="contain" />
+            <div className="relative aspect-square w-full rounded-full overflow-hidden">
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                objectFit="cover"
+                className="hover:scale-110 transition-all duration-700"
+              />
             </div>
             <p className="text-center">{item.title}</p>
           </div>

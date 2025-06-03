@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const LastRecipes = () => {
+const RelatedRecipes = () => {
   const items = [
     {
       src: "/images/strawberry milkshake.png",
@@ -18,11 +18,13 @@ const LastRecipes = () => {
     },
     { src: "/images/donut 1.png", title: "Fancy Glazed Donuts" },
     { src: "/images/cheese burger.png", title: "Cheese Burger" },
+    { src: "/images/donut 1.png", title: "Fancy Glazed Donut 1" },
+    { src: "/images/cheese burger.png", title: "Cheese Burger 1" },
   ];
 
   return (
     <section className="mt-12">
-      <h2 className="text-2xl font-bold mb-6">Latest Recipes</h2>
+      <h2 className="text-2xl font-bold mb-6">Popular Categories</h2>
       <div className="w-full grid grid-cols-4 space-y-8 space-x-5">
         {items.map((item) => (
           <div key={item.title} className="flex flex-col gap-1">
@@ -39,13 +41,8 @@ const LastRecipes = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center">
-        <button className="border border-black text-black px-10 py-2 rounded-md hover:bg-gray-200">
-          Load More
-        </button>
-      </div>
     </section>
   );
 };
 
-export default LastRecipes;
+export default RelatedRecipes;

@@ -1,8 +1,8 @@
 // components/SignUp.tsx
 import Image from "next/image";
-import LoginForm from "@/components/login/LoginForm";
+import RegisterForm from "@/components/register/RegisterForm";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className="bg-[#f9f9f9] flex items-center justify-center">
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
@@ -20,9 +20,8 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Right: Form */}
           <div className="w-full md:w-2/5">
-            <LoginForm />
+            <RegisterForm />
           </div>
         </div>
       </div>
@@ -30,4 +29,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

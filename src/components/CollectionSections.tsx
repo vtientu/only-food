@@ -22,7 +22,7 @@ const CollectionSections = () => {
 
   return (
     <section className="mt-12">
-      <h2 className="text-2xl font-bold mb-6">Popular Categories</h2>
+      <h2 className="text-2xl font-bold mb-6">Hand-Picked Collections</h2>
       <div className="w-full grid grid-cols-2 gap-5">
         {items.map((item) => (
           <div
@@ -30,7 +30,13 @@ const CollectionSections = () => {
             className="flex flex-col items-center border border-[#D9D9D9] rounded-sm"
           >
             <div className="relative h-[220px] w-full overflow-hidden">
-              <Image src={item.src} alt={item.title} fill objectFit="cover" />
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                objectFit="cover"
+                className="hover:scale-110 transition-all duration-700"
+              />
             </div>
             <div className="flex flex-col justify-between w-full p-5">
               <h1 className="font-bold text-2xl">{item.title}</h1>

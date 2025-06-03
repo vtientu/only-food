@@ -41,7 +41,7 @@ export default function Navbar() {
 
       {/* Navigation */}
       <nav className="flex items-center space-x-8">
-        <Link href="#" className="text-gray-700 hover:text-gray-900">
+        <Link href="/" className="text-red-500 hover:text-red-600">
           Home Page
         </Link>
 
@@ -74,13 +74,13 @@ export default function Navbar() {
             style={{ minWidth: "10rem" }}
           >
             <div className="py-1" role="menu" aria-orientation="vertical">
-              <a
-                href="#"
+              <Link
+                href="/recipe/123"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
               >
                 All Recipes
-              </a>
+              </Link>
               <a
                 href="#"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -101,7 +101,7 @@ export default function Navbar() {
 
         <div className="relative" ref={pagesRef}>
           <button
-            className="flex items-center text-red-500 hover:text-red-600"
+            className="flex items-center text-gray-700 hover:text-gray-900"
             onClick={() => setPagesOpen(!pagesOpen)}
           >
             Pages

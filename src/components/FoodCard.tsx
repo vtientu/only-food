@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FoodCard({
   src,
@@ -8,20 +9,20 @@ export default function FoodCard({
   title: string;
 }) {
   return (
-    <div className="w-full">
-      <div className="relative h-[200px]">
+    <Link href={`/recipe/${title}`} className="w-full cursor-pointer">
+      <div className="relative h-[200px] overflow-hidden rounded-xl">
         <Image
           src={src}
           alt={title}
           fill
           objectFit="cover"
-          className="rounded-xl"
+          className="hover:scale-110 transition-all duration-700"
         />
       </div>
       <div className="mt-2">
         <p className="text-orange-500">★★★★★</p>
         <h3 className="text-lg font-semibold">{title}</h3>
       </div>
-    </div>
+    </Link>
   );
 }
